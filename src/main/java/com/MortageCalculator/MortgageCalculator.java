@@ -1,5 +1,5 @@
 package com.MortageCalculator;
-import java.security.Principal;
+
 import java.util.Scanner;
 public class MortgageCalculator {
 
@@ -15,7 +15,7 @@ public class MortgageCalculator {
 
         System.out.println(" Please input the interest rate ");
          double interestRes = myScanner.nextDouble(); // Interest rate answer
-        double monthlyInterestRate = interestRes / 12 /100;
+        double monthlyInterestRate = interestRes / 12 / 100 ;
 
 
         System.out.println("Please input the desired length of loan, in years ; "); // length of loan
@@ -23,14 +23,11 @@ public class MortgageCalculator {
         double termInMonths = termInYears * 12;
 
 
+        double total = (principal * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, termInMonths)) /
+                (Math.pow(1 + monthlyInterestRate, termInMonths) - 1);
 
-        double total=  principal * (interestRes * (Math.pow(1 + interestRes, termInYears)) /
-                ((Math.pow(1 + interestRes, termInYears )) - 1)
-            );
-
-        System.out.println(" monthlyRate $" + String.format("%.2f" , termInMonths));
-        System.out.println("Total interest paid: $" + String.format("%.2f", interestRes));
-
+        System.out.println("Your monthly payment is: $" + String.format("%.2f", total));
+        System.out.println("Total interest paid: $" + String.format("%.2f", total * termInMonths - principal));
 
 
 
