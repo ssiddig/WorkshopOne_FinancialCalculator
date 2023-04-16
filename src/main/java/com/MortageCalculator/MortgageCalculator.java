@@ -26,6 +26,8 @@ public class MortgageCalculator {
         double total = (principal * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, termInMonths)) /
                 (Math.pow(1 + monthlyInterestRate, termInMonths) - 1);
 
+
+
         System.out.println("Your monthly payment is: $" + String.format("%.2f", total));
         System.out.println("Total interest paid: $" + String.format("%.2f", total * termInMonths - principal));
 
