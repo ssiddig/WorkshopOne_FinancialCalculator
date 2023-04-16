@@ -3,6 +3,7 @@ import java.security.Principal;
 import java.util.Scanner;
 public class MortgageCalculator {
 
+
     public static void main(String[] args) {
         Scanner myScanner = new Scanner(System.in);
 
@@ -12,27 +13,23 @@ public class MortgageCalculator {
         double principal = myScanner.nextDouble(); // Principal answer
 
 
-
-        System.out.println(" Please input the interest rate, monthly ");
+        System.out.println(" Please input the interest rate ");
          double interestRes = myScanner.nextDouble(); // Interest rate answer
+        double monthlyInterestRate = interestRes / 12 /100;
 
 
         System.out.println("Please input the desired length of loan, in years ; "); // length of loan
-        int termInYears = myScanner.nextInt();
+        double termInYears = myScanner.nextDouble(); // year to months
+        double termInMonths = termInYears * 12;
 
-        double monthlyRate , loanAmount, numberOfYears, totalPayment, rate =12;
-        // Create a Scanner object
-        Scanner input = new Scanner(System.in);
-
-        double monthlyInterestRate = interestRes / 12;
 
 
         double total=  principal * (interestRes * (Math.pow(1 + interestRes, termInYears)) /
                 ((Math.pow(1 + interestRes, termInYears )) - 1)
             );
 
-
-        System.out.println(" monthlyRate " + termInYears);
+        System.out.println(" monthlyRate $" + String.format("%.2f" , termInMonths));
+        System.out.println("Total interest paid: $" + String.format("%.2f", interestRes));
 
 
 
