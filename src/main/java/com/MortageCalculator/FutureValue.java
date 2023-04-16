@@ -20,12 +20,15 @@ public class FutureValue
 
 
               System.out.println("Please input the desired length, in years ; ");
-              double numberOfYears = myScanner.nextDouble();
+              double time = myScanner.nextDouble();
 
-              A = P * (1 + r/n)^(n*t)
+              int number = myScanner.nextInt();
 
-              double total = deposits * Math.pow(1 + interestRes / deposits) /
-                      Math.pow(numberOfYears * numberOfYears );
+
+              double total = deposits * Math.pow( 1+(interestRes/number), number *time);
+
+              System.out.println(" Your ending balance is: $" + String.format("%.2" , total));
+              System.out.println (" You would have earned a total interest of: $" + String.format("%2" , total));
           }
 
 }
