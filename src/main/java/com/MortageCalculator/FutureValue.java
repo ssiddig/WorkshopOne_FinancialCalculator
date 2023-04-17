@@ -29,7 +29,7 @@ public class FutureValue {
               System.out.println(" Your ending balance is: $" + String.format("%2f" , total));
               System.out.println(" You would have earned a total interest of: $" + String.format("%2f" , total));
 
-              System.out.println();
+
           }
 
 }
