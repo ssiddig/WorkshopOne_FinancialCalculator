@@ -4,8 +4,10 @@ import java.util.Scanner;
 
 import static java.lang.Math.pow;
 
-public class FutureValue
-      {
+public class FutureValue {
+
+
+
           public static void main(String[] args) {
 
               Scanner myScanner = new Scanner(System.in);
@@ -16,7 +18,6 @@ public class FutureValue
 
               System.out.println(" Current interest rate ");
               double interestRes = myScanner.nextDouble(); // Interest rate answer
-              double InterestRate = interestRes;
 
 
               System.out.println("Please input the desired length, in years ; ");
@@ -27,8 +28,8 @@ public class FutureValue
 
               double total = deposits * Math.pow( 1+(interestRes/number), number *time);
 
-              System.out.println(" Your ending balance is: $" + String.format("%.2" , total));
-              System.out.println (" You would have earned a total interest of: $" + String.format("%2" , total));
+              System.out.println(" Your ending balance is: $" + String.format("%2f" , total));
+              System.out.println (" You would have earned a total interest of: $" + String.format("%2f" , total));
           }
 
 }
